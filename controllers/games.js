@@ -1,63 +1,37 @@
-const { writeData } = require('../utils');
+const sendAllGames = (req, res) => {
+    res.setHeader('Content-Type', 'application/json');
 
-const addGameController = async (req, res) => {
-    req.isNew = !Boolean(req.games.find(item => item.title === req.body.title));
+    res.end(JSON.stringify(req.gamesArray));
+};
 
-    if (req.isNew) {
-        const inArray = req.games.map(item => Number(item.id));
-        let maximalId;
+const sendGameById = (req, res) => {
+    res.setHeader('Content-Type', 'application/json');
 
-        if (inArray.length > 0) {
-            maximalId = Math.max(...inArray);
-        } else {
-            maximalId = 0;
-        }
+    res.end(JSON.stringify(req.game));
+};
 
-        req.updatedObject = {
-            id: maximalId + 1,
-            title: req.body.title,
-            image: req.body.image,
-            link: req.body.link,
-            description: req.body.description
-        };
+const sendGameCreated = (req, res) => {
+    res.setHeader('Content-Type', 'application/json');
 
-        req.games = [...req.games, req.updatedObject];
-    } else {
-        console.log(req.games);
-        res.send({ status: 'error', message: 'Игра с таким именем уже есть.' });
+    res.end(JSON.stringify(req.game));
+};
 
-        return;
-    }
+const sendGameUpdated = (req, res) => {
+    res.setHeader('Content-Type', 'application/json');
 
-    await writeData('./data/games.json', req.games);
+    res.end(JSON.stringify(req.game));
+};
 
-    res.send({
-        games: req.games,
-        updated: req.updatedObject
-    });
-}
+const sendGameDeleted = (req, res) => {
+    res.setHeader('Content-Type', 'application/json');
 
-const sendAllGames = async (req, res) => {
-    res.send(req.games);
-}
-
-const deleteGame = async (req, res) => {
-    const id = Number(req.params.id);
-    req.game = req.games.find((item) => item.id === id);
-
-    const index = req.games.findIndex((item) => item.id === req.game.id);
-    req.games.splice(index, 1);
-
-    await writeData('./data/games.json', req.games);
-
-    res.send({
-        games: req.games,
-        updated: req.game
-    });
-}
+    res.end(JSON.stringify(req.game));
+};
 
 module.exports = {
     sendAllGames,
-    deleteGame,
-    addGameController,
-}
+    sendGameById,
+    sendGameUpdated,
+    sendGameCreated,
+    sendGameDeleted
+};
