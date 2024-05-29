@@ -45,31 +45,21 @@ const createGame = async (req, res, next) => {
 };
 
 const updateGame = async (req, res, next) => {
-    if (req.isVoteRequest) {
-        try {
-            let allowVote = 0;
+    try {
+        let allowVote = 0;
 
-            for (let user of req.game.users) {
-                if (user._id == req.params.user._id) allowVote += 1;
-            }
-
-            if (!allowVote) {
-                Object(req.game.users).push(req.user._id);
-                req.game = await games.findByIdAndUpdate(req.game._id, req.game)
-            }
-
-            next();
-        } catch (error) {
-            res.status(400).send({ message: 'Error update game' });
+        for (let user of req.game.users) {
+            if (user._id == req.params.user._id) allowVote += 1;
         }
-    } else {
-        try {
-            req.game = await games.findByIdAndUpdate(req.params.id, req.body);
 
-            next();
-        } catch (error) {
-            res.status(400).send({ message: 'Error update game' });
+        if (!allowVote) {
+            Object(req.game.users).push(req.user._id);
+            req.game = await games.findByIdAndUpdate(req.game._id, req.game)
         }
+
+        next();
+    } catch (error) {
+        res.status(400).send({ message: 'Error update game' });
     }
 };
 
