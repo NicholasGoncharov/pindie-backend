@@ -46,20 +46,10 @@ const createGame = async (req, res, next) => {
 
 const updateGame = async (req, res, next) => {
     try {
-        let allowVote = 0;
-
-        for (let user of req.game.users) {
-            if (user._id == req.params.user._id) allowVote += 1;
-        }
-
-        if (!allowVote) {
-            Object(req.game.users).push(req.user._id);
-            req.game = await games.findByIdAndUpdate(req.game._id, req.game)
-        }
-
+        req.game = await games.findByIdAndUpdate(req.params.id, req.body);
         next();
     } catch (error) {
-        res.status(400).send({ message: 'Error update game' });
+        res.status(400).send({ message: "Error update game." });
     }
 };
 
@@ -74,7 +64,7 @@ const deleteGame = async (req, res, next) => {
 };
 
 const checkEmptyFields = async (req, res, next) => {
-    if(req.isVoteRequest) {
+    if (req.isVoteRequest) {
         next();
 
         return;
@@ -94,7 +84,7 @@ const checkEmptyFields = async (req, res, next) => {
 };
 
 const checkIfCategoriesAvaliable = async (req, res, next) => {
-    if(req.isVoteRequest) {
+    if (req.isVoteRequest) {
         next();
 
         return;
@@ -110,22 +100,28 @@ const checkIfCategoriesAvaliable = async (req, res, next) => {
 };
 
 const checkIfUsersAreSafe = async (req, res, next) => {
-    if (!req.body.users) {
-        next();
-
-        return;
-    }
-
-    if (req.body.users.length - 1 === req.game.users.length) {
+    if (req.isVoteRequest) {
         next();
 
         return;
     } else {
-        res
-            .status(400)
-            .send(
-                'Нельзя удалять пользователей или добавлять больше одного пользователя'
-            );
+        if (!req.body.users) {
+            next();
+
+            return;
+        }
+
+        if (req.body.users.length - 1 === req.game.users.length) {
+            next();
+
+            return;
+        } else {
+            res
+                .status(400)
+                .send(
+                    'Нельзя удалять пользователей или добавлять больше одного пользователя'
+                );
+        }
     }
 };
 

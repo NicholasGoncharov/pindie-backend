@@ -2,7 +2,7 @@
   "_id": {
     "$oid": "662cfb23b1c37d594fbecb2b"
   },
-  "title": "G.U.N.N.E.R",
+  "title": "G.U.N.N.E.R 2",
   "description": "Продержись как можно дольше, отбиваясь от врагов, которых будет становиться всё больше",
   "developer": "IDKWIAm",
   "image": "https://code.s3.yandex.net/teens/pindie-games/gunner/cover.png",
@@ -12,12 +12,13 @@
       "$oid": "662cfa81b1c37d594fbecb1f"
     },
     {
-      "$oid": "662cfac4b1c37d594fbecb25"
-    }
-  ],
-  "users": [
+      "$oid": "662cfaabb1c37d594fbecb24"
+    },
     {
-      "$oid": "663e2da7c1010a155b682ad3"
+      "$oid": "662cfac4b1c37d594fbecb25"
+    },
+    {
+      "$oid": "662cfae0b1c37d594fbecb27"
     }
   ]
 },
@@ -30,11 +31,7 @@
   "developer": "dof",
   "image": "https://code.s3.yandex.net/teens/pindie-games/defence-of-crystal/cover.png",
   "link": "https://code.s3.yandex.net/teens/pindie-games/defence-of-crystal/game/index.html",
-  "users": [
-    {
-      "$oid": "663e2da7c1010a155b682ad3"
-    }
-  ],
+  "users": [],
   "categories": [
     {
       "$oid": "662cfa81b1c37d594fbecb1f"
@@ -57,14 +54,7 @@
   "developer": "cikeyp",
   "image": "https://code.s3.yandex.net/teens/pindie-games/cristal-keeper/cover.png",
   "link": "https://code.s3.yandex.net/teens/pindie-games/cristal-keeper/game/index.html",
-  "users": [
-    {
-      "$oid": "663e2da7c1010a155b682ad3"
-    },
-    {
-      "$oid": "663e2da7c1010a155b682ad3"
-    }
-  ],
+  "users": [],
   "categories": [
     {
       "$oid": "662cfa81b1c37d594fbecb1f"
@@ -87,32 +77,7 @@
   "developer": "goawuu",
   "image": "https://code.s3.yandex.net/teens/pindie-games/go-away/cover.jpg",
   "link": "https://code.s3.yandex.net/teens/pindie-games/go-away/game/index.html",
-  "users": [
-    {
-      "$oid": "663e2da7c1010a155b682ad3"
-    },
-    {
-      "$oid": "663e2da7c1010a155b682ad3"
-    },
-    {
-      "$oid": "663e2da7c1010a155b682ad3"
-    },
-    {
-      "$oid": "663e2da7c1010a155b682ad3"
-    },
-    {
-      "$oid": "663e2da7c1010a155b682ad3"
-    },
-    {
-      "$oid": "663e2da7c1010a155b682ad3"
-    },
-    {
-      "$oid": "663e2da7c1010a155b682ad3"
-    },
-    {
-      "$oid": "663e2da7c1010a155b682ad3"
-    }
-  ],
+  "users": [],
   "categories": [
     {
       "$oid": "662cfa81b1c37d594fbecb1f"
@@ -135,11 +100,7 @@
   "developer": "deucast",
   "image": "https://code.s3.yandex.net/teens/pindie-games/Deep-Under-The-Castle/cover.png",
   "link": "https://code.s3.yandex.net/teens/pindie-games/Deep-Under-The-Castle/index.html",
-  "users": [
-    {
-      "$oid": "663e2da7c1010a155b682ad3"
-    }
-  ],
+  "users": [],
   "categories": [
     {
       "$oid": "662cfa81b1c37d594fbecb1f"
@@ -162,11 +123,7 @@
   "developer": "spatec",
   "image": "https://code.s3.yandex.net/teens/pindie-games/space-terror/cover.png",
   "link": "https://code.s3.yandex.net/teens/pindie-games/space-terror/game/index.html",
-  "users": [
-    {
-      "$oid": "663e2da7c1010a155b682ad3"
-    }
-  ],
+  "users": [],
   "categories": [
     {
       "$oid": "662cfa81b1c37d594fbecb1f"
@@ -189,11 +146,7 @@
   "developer": "dalogue",
   "image": "https://code.s3.yandex.net/teens/pindie-games/dangeons-n-caves-prologue/cover.png",
   "link": "https://code.s3.yandex.net/teens/pindie-games/dangeons-n-caves-prologue/game/index.html",
-  "users": [
-    {
-      "$oid": "663e2da7c1010a155b682ad3"
-    }
-  ],
+  "users": [],
   "categories": [
     {
       "$oid": "662cfa81b1c37d594fbecb1f"
@@ -219,11 +172,7 @@
   "developer": "squayer",
   "image": "https://code.s3.yandex.net/teens/pindie-games/square-slayer/cover.png",
   "link": "https://code.s3.yandex.net/teens/pindie-games/square-slayer/game/index.html",
-  "users": [
-    {
-      "$oid": "663e2da7c1010a155b682ad3"
-    }
-  ],
+  "users": [],
   "categories": [
     {
       "$oid": "662cfa81b1c37d594fbecb1f"
@@ -235,5 +184,17 @@
       "$oid": "662cfae0b1c37d594fbecb27"
     }
   ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66599d0cfbccd10dd859f2e7"
+  },
+  "title": "Defence of Crystal 2",
+  "description": "Обновление не застало вас ждать!",
+  "developer": "dof",
+  "image": "https://code.s3.yandex.net/teens/pindie-games/defence-of-crystal/cover.png",
+  "link": "https://code.s3.yandex.net/teens/pindie-games/defence-of-crystal/game/index.html",
+  "users": [],
   "__v": 0
 }]
