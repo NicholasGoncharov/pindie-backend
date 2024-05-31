@@ -100,28 +100,22 @@ const checkIfCategoriesAvaliable = async (req, res, next) => {
 };
 
 const checkIfUsersAreSafe = async (req, res, next) => {
-    if (req.isVoteRequest) {
+    if (!req.body.users) {
+        next();
+
+        return;
+    }
+
+    if (req.body.users.length - 1 === req.game.users.length) {
         next();
 
         return;
     } else {
-        if (!req.body.users) {
-            next();
-
-            return;
-        }
-
-        if (req.body.users.length - 1 === req.game.users.length) {
-            next();
-
-            return;
-        } else {
-            res
-                .status(400)
-                .send(
-                    'Нельзя удалять пользователей или добавлять больше одного пользователя'
-                );
-        }
+        res
+            .status(400)
+            .send(
+                'Нельзя удалять пользователей или добавлять больше одного пользователя'
+            );
     }
 };
 
